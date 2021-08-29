@@ -83,7 +83,7 @@ popd
 
 
 if [[ ${CROSS_OVER_VERSION} == 20.* ]]; then
-    echo "Patch kernelbase/file.c to add file access blacklist from Proton"
+    echo "Patch kernelbase/file.c to add file access blacklist from Proton (20.x)"
     patch sources/wine/dlls/kernelbase/file.c < proton_vmp_fix_20.patch
     
     echo "Patch wcslen() in ntdll/wcstring.c to prevent crash if a nullptr is suppluied to the function (HACK)"
@@ -102,7 +102,7 @@ if [[ ${CROSS_OVER_VERSION} == 20.* ]]; then
 fi
 
 if [[ ${CROSS_OVER_VERSION} == 21.* ]]; then
-    echo "Patch kernelbase/file.c to add file access blacklist from Proton"
+    echo "Patch kernelbase/file.c to add file access blacklist from Proton (21.x)"
     patch sources/wine/dlls/kernelbase/file.c < proton_vmp_fix21.patch
 fi
 

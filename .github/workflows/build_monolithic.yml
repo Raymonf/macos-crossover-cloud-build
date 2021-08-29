@@ -151,11 +151,11 @@ jobs:
         run:  |
           tar xf ${{ env.CROSS_OVER_LOCAL_FILE }}.tar.gz
 
-      - name: Patch kernelbase/file.c to add file access blacklist from Proton
+      - name: Patch kernelbase/file.c to add file access blacklist from Proton (20.x)
         if: startsWith(matrix.CROSS_OVER_VERSION, '20')
         run: patch sources/wine/dlls/kernelbase/file.c < proton_vmp_fix_20.patch
 
-      - name: Patch kernelbase/file.c to add file access blacklist from Proton
+      - name: Patch kernelbase/file.c to add file access blacklist from Proton (21.x)
         if: startsWith(matrix.CROSS_OVER_VERSION, '21')
         run: patch sources/wine/dlls/kernelbase/file.c < proton_vmp_fix_21.patch
 
