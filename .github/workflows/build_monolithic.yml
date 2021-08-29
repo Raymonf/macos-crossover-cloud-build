@@ -152,7 +152,6 @@ jobs:
           tar xf ${{ env.CROSS_OVER_LOCAL_FILE }}.tar.gz
 
       - name: Patch kernelbase/file.c to add file access blacklist from Proton
-        if: startsWith(matrix.CROSS_OVER_VERSION, '20')
         run: patch sources/wine/dlls/kernelbase/file.c < proton_vmp_fix.patch
 
       - name: Patch Add missing distversion.h
