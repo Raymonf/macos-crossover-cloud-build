@@ -84,7 +84,7 @@ popd
 
 if [[ ${CROSS_OVER_VERSION} == 20.* ]]; then
     echo "Patch kernelbase/file.c to add file access blacklist from Proton"
-    patch sources/wine/dlls/kernelbase/file.c < proton_vmp_fix.patch
+    patch sources/wine/dlls/kernelbase/file.c < proton_vmp_fix_20.patch
     
     echo "Patch wcslen() in ntdll/wcstring.c to prevent crash if a nullptr is suppluied to the function (HACK)"
     pushd sources/wine
@@ -99,6 +99,11 @@ if [[ ${CROSS_OVER_VERSION} == 20.* ]]; then
 
     echo Patch DXVK
     patch sources/dxvk/src/util/rc/util_rc_ptr.h < dxvk_util_rc_ptr.patch
+fi
+
+if [[ ${CROSS_OVER_VERSION} == 21.* ]]; then
+    echo "Patch kernelbase/file.c to add file access blacklist from Proton"
+    patch sources/wine/dlls/kernelbase/file.c < proton_vmp_fix21.patch
 fi
 
 ############ Build LLVM / Clang ##############

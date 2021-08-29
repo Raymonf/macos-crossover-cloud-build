@@ -1,4 +1,4 @@
-Patch based on code by @aeikum
+Patch based on code by @aeikum for CrossOver 20.x
 Last two commits in https://github.com/ValveSoftware/wine/commits/2409bd1f74be116172688a25df725290637c255a/dlls/kernelbase
 
 --- file.c.orig	2020-10-08 12:41:40.000000000 -0400
